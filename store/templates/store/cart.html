@@ -85,7 +85,7 @@
   <div class="mt-4 d-flex justify-content-between">
     <a href="/" class="btn btn-primary">Continue Shopping</a>
   
-    {% if cart_items %}
+    {% if cart_items and  user.is_authenticated %}
       <form method="post" action="{% url 'checkout' %}">
         {% csrf_token %}
         <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a>
